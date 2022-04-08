@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập</title>
+</head>
+<body>
+<form style="padding: 10px;border: 1px solid black;margin: auto;width: 200px">
+    Nhập số 1:<input type="number" id="so1" value="">
+    <br>
+    Nhập số 2:<input type="number" id="so2" value="">
+<br><br>
+
+  <input type="submit" value="Tính toán" onclick="sum()">
+</form>
+
+
+<script>
+    function  sum(){
+        var c=Number(document.getElementById("so1").value);
+        var d=Number(document.getElementById("so2").value);
+        var e=c+d;
+        var f=c*d;
+
+        alert("Tổng của 2 số đã nhập là :  "+e);
+        alert("Tích của 2 số đã nhập là :  "+f);
+    }
+</script>
+</body>
+</html>

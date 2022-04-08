@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nhap thong tin</title>
+</head>
+<body>
+<form style="width: 200px ;height: 200px;margin: auto;border: 1px solid black;padding: 10px">
+    User: <input type="text" name="yourname" id="n" value="">
+    <br>
+    Pass: <input type="password" name="pass" id="p" value="">
+    <br>
+    Email: <input type="email" name="email" id="e" value="">
+    <br>
+    Phone: <input type="tel" name="phone" id="t" value="">
+    <br>
+    <input type="button" value="Submit" onclick="a()">
+</form>
+
+<script>
+    function a(){
+
+        console.log("User la :  "+ document.getElementById("n").value)
+        console.log("Pass la :  "+ document.getElementById("p").value)
+        console.log("Email la :  "+ document.getElementById("e").value)
+        console.log("Phone la :  "+ document.getElementById("t").value)
+
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính tích</title>
+</head>
+<body>
+<form  style="width: 200px;height: 150px;padding: 20px;margin: auto;border: 1px solid black">
+    Nhập số: <input type="number" id="so1"><br>
+    <br>
+    <select id="hs" >
+        <option name="hSo" value="5">5</option>
+        <option name="hSo" value="6">6</option>
+        <option name="hSo" value="7">7</option>
+        <option name="hSo" value="8">8</option>
+        <option name="hSo" value="9">9</option>
+        <option name="hSo" value="10">10</option>
+        <option name="hSo" value="11">11</option>
+        <option name="hSo" value="12">12</option>
+    </select>
+    <br><br>
+    <input type="button" onclick="tinhTich()" value="Show">
+    <br><br>
+    <div id="2" style="width: 150px;height:30px;border: 1px solid black;margin: auto">Kết quả :</div>
+</form>
+
+<script>
+
+    var selectHS=document.getElementById("hs");
+    selectHS.addEventListener("change",tinhTich)
+
+    function tinhTich(){
+        var selecths=document.getElementById("hs").value;
+        var a=document.getElementById("so1").value;
+        var cc=selecths*a;
+        //alert(cc);
+        document.getElementById("2").innerHTML="Kết quả : "+cc;
+
+    }
+
+
+
+
+</script>
+</body>
+</html>
