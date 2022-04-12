@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+    <style>
+      td{
+        text-align: center;
+      }
+    </style>
+</head>
+<body>
+
+<form style=" border: 1px solid black ;width: 700px;margin: auto">
+  <h3 style="text-align: center;color: blue">Chuyển đổi tiền</h3>
+  <table style="padding: 10px;">
+    <tr class="1">
+      <td > Amount</td>
+      <td >From Currency</td>
+      <td>To Currency</td>
+    </tr>
+    <tr>
+      <td ><input type="number" id="soTien" ></td>
+      <td>
+        <select id ="from" style="width: 150px">
+          <option value="1">VND</option>
+          <option value="23000">USD</option>
+          <option value="24885">EUR</option>
+        </select>
+      </td>
+      <td>
+        <select id="to" style="width: 150px">
+          <option value="1">VND</option>
+          <option value="23000">USD</option>
+          <option value="24885">EUR</option>
+        </select>
+      </td>
+
+      <td> <input type="button" onclick="convert()" value="Convert"></td>
+    </tr>
+  </table>
+
+  <div style="color: blue;padding: 20px" id="out">Result : </div>
+
+</form>
+</body>
+</html>
+<script>
+
+  var selectFrom=document.getElementById("from");
+  var selectTo=document.getElementById("to");
+  selectFrom.addEventListener("change")
+  selectTo.addEventListener("change")
+
+  function convert(){
+    let s=document.getElementById("soTien").value;
+    let a=document.getElementById("from").value;
+    let b= document.getElementById("to").value;
+    let t=Number(a/b);
+
+    c= s*t;
+    document.getElementById("out").innerHTML+=c
+    //document.write(c);
+
+
+  }
+
+
+
+
+</script>
