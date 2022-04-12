@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td colspan="2"><input type="number" id="so1" value=""></td>
+        <td colspan="2"><input type="number" id="so2" value=""></td>
+    </tr>
+    <tr>
+        <td><button onclick="cong()">Addition(+)</button></td>
+        <td><button onclick="tru()">Subtraction(-)</button></td>
+        <td><button onclick="nhan()">Multiplication(x)</button></td>
+        <td><button onclick="chia()">Division(/)</button></td>
+
+    </tr>
+</table>
+
+</body>
+</html>
+<script>
+
+
+    function cong(){
+        let a=Number(document.getElementById("so1").value);
+        let b=Number(document.getElementById("so2").value);
+        let c= a+b;
+        alert("Kết quả là: "+c);
+    }
+    function tru(){
+        let a=Number(document.getElementById("so1").value);
+        let b=Number(document.getElementById("so2").value);
+        let c=a-b;
+        alert("Kết quả là: "+c);
+    }
+    function nhan(){
+        let a=Number(document.getElementById("so1").value);
+        let b=Number(document.getElementById("so2").value);
+        let c=a*b;
+        alert("Kết quả là: "+c);
+
+    }
+    function chia(){
+        let a=Number(document.getElementById("so1").value);
+        let b=Number(document.getElementById("so2").value);
+        let c=a/b;
+        alert("Kết quả là: "+c);
+    }
+
+
+</script>
