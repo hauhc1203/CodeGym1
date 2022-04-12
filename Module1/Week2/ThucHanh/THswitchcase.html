@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập với cấu trúc switch-case</title>
+</head>
+<body>
+<button onclick="bai1()">Bài 1</button><br><br>
+<button onclick="bai2()">Bài 2</button><br><br>
+<button onclick="bai3()">Bài 3</button><br><br>
+
+</body>
+</html>
+
+
+<script>
+    function bai1(){
+        let browser=prompt("Trình duyệt bạn đang sử dụng là ?");
+        switch (browser) {
+            case 'Edge':
+                alert("You've got the Edge!");
+                break;
+            case 'Chrome':
+            case 'Firefox':
+            case 'Safari':
+            case 'Opera':
+                alert('Okay we support these browsers too');
+                break;
+            default:
+                alert('We hope that this page looks ok!');
+        }
+    }
+    function bai2(){
+        let a = parseInt(prompt('a?', ''));
+        switch (a) {
+            case 0:
+                alert(0);
+                break;
+            case 1:
+                alert(1);
+                break;
+            case 2:
+            case 3:
+                alert('2,3');
+                break;
+        }
+    }
+    function bai3(){
+        let n=parseInt(prompt("Nhập 1 số bất kỳ vào đây"))
+        if(n>0){
+            alert(1)
+        }else if(n<0){
+            alert(-1)
+        }else alert(0)
+    }
+
+</script>
