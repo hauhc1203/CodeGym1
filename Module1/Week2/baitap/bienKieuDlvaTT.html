@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biến, kiểu dữ liệu và toán tử</title>
+</head>
+<body>
+<!--Bài 1: Viết chương trình nhập điểm của một sinh viên cho các môn: Vật lý, Hóa học, và Sinh học.-->
+<!--Sau đó hiển thị điểm trung bình và tổng của những điểm này.-->
+
+<button onclick="bai1()">Bài 1</button><br><br>
+
+<!--Bài 2:  Viết chương trình nhập một giá trị là độ 0C (Celsius) và chuyển nó sang độ 0F (Fahrenheit).-->
+<!--[Hướng dẫn: C/5 = (F-32)/9]-->
+<button onclick="bai2()">Bài 2</button><br><br>
+
+<!--Viết chương trình tính diện tích hình tròn-->
+<button onclick="bai3()">Bài 3</button><br><br>
+
+<!--Bài 4: Viết chương trình chu vi hình tròn-->
+<button onclick="bai3()">Bài 4</button><br><br>
+
+
+<script>
+    function bai1(){
+        let vl=prompt('Nhập điểm vật lý vào đây');
+        let h=prompt('Nhập điểm Hóa vào đây');
+        let s=prompt('Nhập điểm sinh vào đây');
+        let dvl=Number(vl);
+        let dh=Number(h);
+        let ds=Number(s);
+        let sum= dvl+dh+ds;
+        alert("tổng điểm 3 môn là : "+sum);
+        alert("điểm trung bình là : "+sum/3);
+    }
+
+    function bai2(){
+        let t=prompt('nhap vao nhiet do (do C)');
+        let f=32+(9/5)*t;
+        alert(t+" độ C bằng "+f+ " độ F");
+    }
+    function bai3(){
+        let banKinh=prompt("nhập vào bán kính");
+        let dienTich=banKinh*banKinh*Math.PI;
+        alert("diện tích của hình tròn là: "+dienTich);
+        let chuVi=2*banKinh*Math.PI;
+        alert("chu vi của hình tròn là: "+chuVi)
+    }
+
+</script>
+
+
+</body>
+</html>
