@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Puzzle</title>
+</head>
+<body>
+<img id="img" src="./image/1.jpg" onclick="change()" style="width: 500px;height: auto">
+</body>
+</html>
+
+<script>
+    let c=1;
+    function change(){
+        if(c===1){
+            document.getElementById('img').src="./image/2.jpg"
+
+            c=2;
+        }else if(c===2){
+            document.getElementById('img').src="./image/3.jpg"
+            c=3;
+        }
+        else {
+            document.getElementById('img').src="./image/1.jpg"
+
+            c=1
+        }
+
+    }
+</script>
