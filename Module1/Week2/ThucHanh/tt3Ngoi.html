@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập với toán tử ba ngôi</title>
+</head>
+<body>
+<!--Bài 1: Viết chương trình nhập vào giá trị cho a và b. Tính tổng a và b, nếu tổng nhỏ hơn 4, hiển thị chuỗi Below, -->
+<!--ngược lại hiển thị Over. Lưu ý sử dụng toán tử ? :-->
+<button onclick="bai1()">Bài 1</button>
+<br><br>
+<!--Bài 2: Viết chương trình nhập vào giá trị cho chuỗi message.-->
+
+<!--Nếu giá trị nhập vào là Employee thì hiển thị chuỗi Hello.-->
+
+<!--Còn lại nếu giá trị nhập vào là Director thì hiển thị chuỗi Greetings-->
+
+<!--Còn lại nếu giá trị nhập vào chuỗi rỗng thì hiển thị No login-->
+
+<!--Còn lại hiển thị chuỗi rỗng-->
+<button onclick="bai2()">Bài 2</button>
+<br><br>
+</body>
+</html>
+<script>
+    function bai1(){
+        let a=parseInt(prompt("nhap a"))
+        let b=parseInt(prompt("nhap b"))
+        let result;
+        a+b<4? result="Below":result="Over"
+        alert(result)
+
+    }
+    function bai2(){
+        let s=prompt('nhap vao 1 chuoi')
+        s=="Employee"? alert("Hello"): s=="Director"?alert("Greetings"):s==""? alert("No login"):alert("No login")
+
+    }
+</script>
