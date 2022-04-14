@@ -1,10 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Cấu trúc điều kiện 2</title>
 </head>
 <body>
-$END$
+<button onclick="f1()">Bài 1</button><br><br>
+<button onclick="f2()">Bài 2</button><br><br>
+<button onclick="f3()">Bài 3</button><br><br>
+<button onclick="f4()">Bài 4</button><br><br>
+<button onclick="f5()">Bài 5</button><br><br>
+<button onclick="f6()">Bài 6</button><br><br>
+<button onclick="f7()">Bài 7</button><br><br>
+<button onclick="f8()">Bài 8</button><br><br>
+
+<button onclick="f9()">Bài 9</button><br><br>
+<button onclick="f10()">Bài 10</button><br><br>
+
+<button onclick="f11()">Bài 11</button><br><br>
+
+<button onclick="f12()">Bài 12</button><br><br>
+
 </body>
 </html>
+<script>
+
+
+
+
+    function f1(){
+        let t=prompt('nhap vao nhiet do (do C)');
+        let f=32+(9/5)*t;
+        alert(t+" độ C bằng "+f+ " độ F");
+    }
+    function f2(){
+        let m=prompt('Nhập khoảng cách vào đây(m)');
+        let ft=m*3.2808;
+        alert(m+" m bằng  "+ft+ " feet");
+    }
+    function f3(){
+        let a=prompt("Nhập vào độ dài cạnh a")
+        let s1=a*a
+        alert("diện tích hình vuông cạnh bằng "+a+" là: "+s1)
+    }
+    function f4(){
+        let a= prompt("nhập vào a")
+        let b=prompt("nhập vào b")
+
+
+        alert("diện tích hình chữ nhật đã cho là: "+a*b)
+    }
+    function f5(){
+        let a= prompt("nhập vào a")
+        let b=prompt("nhập vào b")
+        alert("diện tích tam giác vuông đã cho là: "+(a*b)/2)
+    }
+    function f6(){
+        let a= prompt("nhập vào a")
+        let b=prompt("nhập vào b")
+        if(a==0&&b==0){
+            alert("phương trình có vô số nghiệm")
+        }else if(a==0&&b!=0){
+            alert("phương trình vô nghiệm")
+        }else if(a!=0){
+
+            alert("phương trình có nghiệm duy nhất x= "+(-b/a))
+        }
+    }
+    function f7(){
+        let a= prompt("nhập vào a")
+        let b=prompt("nhập vào b")
+        let c=prompt("nhập vào c")
+        let d;
+
+        if(a==0){
+            alert("hãy nhập lại a khác 0")
+            //let a= prompt("nhập vào a")
+        }else {
+             d= b * b - 4 * a * c
+            if(d<0){
+                alert("phương trình vô nghiệm")
+            }else if(d==0){
+                alert("Phương trình có nghiệm kép x1=x2= "+(-b/2*a))
+            }else {
+                alert("phương trình có 2 nghiệm riêng biệt x1= "+(Math.sqrt(d)-b)/2*a )
+                alert("phương trình có 2 nghiệm riêng biệt x2= "+(-b-Math.sqrt(d))/2*a )
+            }
+        }
+
+    }
+    function f8(){
+        let age=prompt("nhập 1 số nguyên vào đây")
+        if(age>0&&age<120){
+            alert("số bạn vừa nhập là tuổi của con người")
+        }else alert("số bạn vừa nhập là không phải tuổi của con người")
+    }
+    function f9(){
+        let a= parseInt(prompt("nhập vào a"))
+        let b=parseInt(prompt("nhập vào b"))
+        let c=parseInt(prompt("nhập vào c"))
+        let la_tam_giac=false;
+
+        if(a+b>c){
+            if(a+c>b){
+                if(b+c>a){
+                    la_tam_giac=true;
+                }
+            }
+        }
+        if(la_tam_giac){
+            alert("đây là 3 cạnh của 1 tam giác")
+        }else alert('đây không phải 3 cạnh của 1 tam giác')
+    }
+    function f10(){
+        let soKwh=parseInt(prompt("nhập số kwh đã dùng vào đây"))
+        let cuoc=0;
+        if(soKwh>400){
+            cuoc+=50*(1678+1734)+100*(2014+2536+2834)+(soKwh-400)*2927
+        }else if(soKwh>300){
+            cuoc+=50*(1678+1734)+100*(2014+2536)+(soKwh-300)*2834
+        }else if (soKwh>200){
+            cuoc+=50*(1678+1734)+100*2014+(soKwh-200)*2536
+        }else if (soKwh>100){
+            cuoc+=50*(1678+1734)+(soKwh-100)*2014
+        }else if (soKwh>50){
+            cuoc+=50*1678+(soKwh-50)*1734
+        }else cuoc+=soKwh*1678
+
+        let c=""+cuoc
+
+        alert("Cước phí phải đóng là: "+formatCash(c)+" vnđ")
+    }
+    function f11(){
+        let tncn=prompt('Nhập vào Thu nhập của bạn ')
+        let soNguoiPhuThuoc=prompt('Nhập vào số người đang phụ thuộc (vd: con ,..) ')
+
+        let tntt=tncn-soNguoiPhuThuoc*4400000-11000000
+
+        let thueTNCN=0;
+        if(tntt>80000000){
+            thueTNCN=tntt*0.35-9850000
+        }else if(tntt>52000000){
+            thueTNCN=tntt*0.3-5850000
+        }else if(tntt>32000000){
+            thueTNCN=tntt*0.25-3250000
+        }else if(tntt>18000000){
+            thueTNCN=tntt*0.2-1650000
+
+        }else if (tntt>10000000){
+            thueTNCN=tntt*0.15-750000
+        }else if(tntt>5000000){
+            thueTNCN=tntt*0.1-250000
+        }else thueTNCN=0.05*tntt
+
+        if(thueTNCN>0){
+            let out=""+thueTNCN
+            let format = formatCash(out)
+            alert('thuế thu nhập cá nhân bạn phải nộp là '+format+" vnđ")
+
+        }else alert("bạn không phải nộp thuế thu nhập cá nhân")
+
+
+
+
+    }
+    function f12(){
+        let tienVay=parseInt(prompt("nhập số tiền vay vào đây"))
+        let mon=parseInt(prompt("nhập số tháng vay vào đây"))
+
+
+        for(let i=1;i<=mon;i++) {
+            let lai = 0.05 * tienVay
+            tienVay += lai
+        }
+        let loan=''+parseInt(tienVay)
+
+        alert('Tổng số tiền bạn phải trả là: '+formatCash(loan)+"vnđ")
+
+    }
+    function formatCash(str) {
+        return str.split('').reverse().reduce((prev, next, index) => {
+            return ((index % 3) ? next : (next + ',')) + prev
+        })
+    }
+
+
+
+</script>
