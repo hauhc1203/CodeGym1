@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sử dụng vòng lặp for</title>
+</head>
+<body>
+    <BUTTON onclick="bai_1()"> Bài 1</BUTTON>
+    <BUTTON onclick="bai_2()"> Bài 2</BUTTON>
+    <div id="output"></div><br><br>
+
+
+</body>
+</html>
+<script>
+    let a=document.getElementById('output')
+    function bai_1(){
+
+        let i;
+        for (i = 0; i < 5; i++) {
+            a.innerHTML+= "The number is " + i + "<br>";
+        }
+    }
+    function bai_2(){
+        let num = prompt("Enter your number: ");
+        let sum=0
+        for(let i=1;i<=num;i++){
+            sum+=i
+        }
+        a.innerHTML="Tổng các sô từ 1 đến "+num +" là: "+sum+"<br><br>"
+    }
+
+</script>
