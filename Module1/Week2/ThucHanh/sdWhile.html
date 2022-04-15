@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sử dụng vòng lặp while</title>
+</head>
+<body>
+<button onclick="bai1()">Bài 1</button>
+<button onclick="bai2()">Bài 2</button><br><br>
+
+
+
+</body>
+</html>
+<script>
+    function bai1(){
+        let num=parseInt(prompt("nhap vao 1 số"))
+        let sum=0
+        while (num!=-1){
+            sum+=num
+            num=parseInt(prompt("hay nhap  vao 1 số nữa"))
+        }
+        let c=sum-1
+        alert("tổng các số đã nhập là "+c)
+    }
+    function bai2(){
+        let i=1
+
+        while (i<100){
+            document.write("<hr width = " + i + "%> ")
+            i++;
+        }
+
+    }
+</script>
