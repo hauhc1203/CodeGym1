@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sinh bảng cửu chương</title>
+
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let i
+    let j
+    let out
+
+    out=" <table border='1' width='300' cellSpacing='0' cellPadding='3'>"
+    for(i=1;i<10;i++){
+        out=out+"<tr>"
+        for(j=1;j<10;j++){
+            out=out+"<td style='width: 300px'>"+j+"x"+i+"="+i*j+"</td>"
+        }
+        out+="</tr>"
+    }
+    out+="</table>"
+    document.write(out)
+</script>
