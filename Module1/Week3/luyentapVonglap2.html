@@ -9,6 +9,8 @@
 <button onclick="b2()">Bài 2</button>
 <button onclick="b3()">Bài 3</button>
 <button onclick="b4()">Bài 4</button>
+<button onclick="b5()">Bài 5</button>
+
 
 
 
@@ -91,23 +93,45 @@
     function b4(){
         let hcn=''
         for(let i=1;i<11;i++){
-            for (let j=1;j<i;j++){
-
+            for (let j=1;j<50;j++){
                 if(i==1||i==10){
                     hcn+="*"
                 }else {
-                    hcn+="*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*"
+                    hcn+="*"
+                    for(j=2;j<49;j++){
+                        hcn+="&nbsp;&nbsp;"
+                    }
+                    hcn+="*"
                 }
             }
             hcn+="<br>"
         }
         document.write(hcn+"<br>")
     }
+    function b5(){
+
+            let tienVay=parseInt(prompt("nhập số tiền vay vào đây"))
+            let mon=parseInt(prompt("nhập số tháng vay vào đây"))
+
+
+            for(let i=1;i<=mon;i++) {
+                let lai = 0.05 * tienVay
+                tienVay += lai
+            }
+            let loan=''+parseInt(tienVay)
+
+            alert('Tổng số tiền bạn phải trả là: '+formatCash(loan)+"vnđ")
+
+
+    }
 
 
 
-
-
+    function formatCash(str) {
+        return str.split('').reverse().reduce((prev, next, index) => {
+            return ((index % 3) ? next : (next + ',')) + prev
+        })
+    }
 
 
 </script>
