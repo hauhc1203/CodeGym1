@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược mảng</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let x=[1,3,4,2,5,9,7,8]
+    document.write(x+"<br>")
+    let y=[]
+    for(let i=0;i<x.length;i++){
+        y[i]=x[i]
+
+    }
+    for(let i=0;i<x.length;i++){
+
+        x[i]=y[x.length-i-1]
+    }
+    document.write(x)
+
+
+</script>
