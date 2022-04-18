@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo và thao tác với mảng</title>
+</head>
+<body>
+<input type="number" id="input1">&nbsp;<button onclick="add()">Add</button>&nbsp;<button onclick="display()">Display</button>
+<br><br>
+<p id="output"></p>
+</body>
+</html>
+<script>
+    let a=[]
+    let a1=document.getElementById("input1")
+    let b1=document.getElementById("output")
+    function add(){
+        a.push(a1.value)
+    }
+    function display(){
+       // a.forEach(element=>b1.innerHTML+='Element ='+element+"<br>")
+        for(let i=0;i<a.length;i++){
+            b1.innerHTML+='Element '+i+' = '+a[i]+"<br><br>"
+        }
+    }
+</script>
