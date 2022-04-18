@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Test</title>
+</head>
+<body>
+<h2>Bài 1</h2>
+<input type="number" id="input1">Nhập a <button onclick="bai1_a()">Bài 1_a</button><br><hr>
+<input type="number" id="input2">Nhập a
+<input type="number" id="input3">Nhập b <button onclick="bai1_b()">Bài 1_b</button><br><hr>
+<input type="number" id="input4">Nhập a
+<input type="number" id="input5">Nhập b <button onclick="bai1_c()">Bài 1_c</button><br><hr>
+<input type="number" id="input6">Nhập a <button onclick="bai1_d()">Bài 1_d</button><br><hr>
+<input type="number" id="canh1">Nhập a
+<input type="number" id="canh2">Nhập b
+<input type="number" id="canh3">Nhập c <button onclick="bai1_e()">Bài 1_e</button><br><hr>
+
+<br><br>
+<p id="output">Kết quả:<br></p>
+</body>
+</html>
+<script>
+    let out=document.getElementById("output")
+    function bai1_a(){
+        let a=document.getElementById("input1").value
+        out.innerHTML+="Chu vi của hình vuông cạnh "+a+" la: "+a*4+"<br>"
+        out.innerHTML+="Diện tích của hình vuông cạnh "+a+" la: "+a*a+"<br>"
+
+    }
+    function bai1_b(){
+        let a=document.getElementById("input2").value
+        let b=document.getElementById('input3').value
+        let c=1;
+        for(let i=1;i<=b;i++){
+            c*=a
+        }
+        out.innerHTML+=a+" bình phương = "+a*a+"<br>"
+        out.innerHTML+= a+"^"+b+" bằng "+ c+"<br>"
+    }
+    function bai1_c(){
+        let a=parseInt(document.getElementById("input4").value)
+        let b=parseInt(document.getElementById("input5").value)
+        let sum=0
+        let i=a
+        while (i<=b){
+            sum+=i
+            i++
+        }
+        out.innerHTML+="Tổng của các số từ "+a+" đến "+b+" là: "+sum+"<br>"
+    }
+    function bai1_d(){
+        let year=parseInt(document.getElementById("input6").value)
+        let theKi=parseInt(year/100)+1
+        out.innerHTML+="năm "+year+" thuộc thế kỉ thứ "+theKi+"<br>"
+    }
+    function bai1_e(){
+        let a= parseInt(document.getElementById("canh1").value)
+        let b= parseInt(document.getElementById("canh2").value)
+        let c= parseInt(document.getElementById("canh3").value)
+        if(isTamgiac(a,b,c)){
+            if(a==c&&a==b){
+                out.innerHTML+=a+","+b+","+c+" Là 3 cạnh của tam giác đều"+"<br>"
+            }else if(a==b||a==c||b==c){
+                out.innerHTML+=a+","+b+","+c+" Là 3 cạnh của tam giác cân"+"<br>"
+
+            }else if(a*a+b*b==c*c||a*a==b*b+c*c||a*a+b*b==c*c){
+                out.innerHTML+=a+","+b+","+c+" Là 3 cạnh của tam giác vuông"+"<br>"
+            }else out.innerHTML+=a+","+b+","+c+" Là 3 cạnh của 1 tam giác"+"<br>"
+        }else out.innerHTML+=a+","+b+","+c+" không phải 3 cạnh của 1 tam giác"+"<br>"
+
+    }
+
+
+
+
+
+    function isTamgiac(a,b,c){
+        if(a+b>c){
+            if(a+c>b){
+                if(b+c>a){
+                    return true
+                }
+            }
+        }else return false
+
+
+    }
+</script>

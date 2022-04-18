@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini test</title>
+</head>
+<body>
+<button onclick="bai2()">Bài 2</button><br><br>
+<input id="bai3" type="number">Nhập vào 1 số
+<button onclick="bai3()">Bài 3</button>
+
+</body>
+</html>
+<script>
+    function bai2(){
+        let a=19
+        let c=0
+        document.write("24 số chia hết cho 2 và 3 từ 19 là:<br> ")
+        while (c<20){
+            if(a%6==0){
+                document.write(a+"<br>")
+                c++
+
+            }
+            a+=1
+        }
+    }
+    function bai3(){
+        let n =parseInt(document.getElementById("bai3").value)
+
+        if(n%2!=0){
+            if(iSont(n)){
+               document.write(n+" không chia hết cho 2 và là số nguyên tố")
+            }else document.write(n+" không chia hết cho 2 nhưng không phải là số nguyên tố")
+        }else  document.write(n+" chia hết cho 2 ")
+
+    }
+
+    function iSont(a){
+        if(a<=1){
+            return false
+        }else {
+            for (let i=2;i<a/2;i++){
+                if(a%i==0){
+                    return false
+                }
+            }return true
+        }
+    }
+
+</script>

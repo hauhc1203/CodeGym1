@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập vòng lặp 02</title>
+</head>
+<body>
+<button onclick="b1()">Bài 1</button>
+<button onclick="b2()">Bài 2</button>
+<button onclick="b3()">Bài 3</button>
+<button onclick="b4()">Bài 4</button>
+
+
+
+</body>
+</html>
+<script>
+    function fibonaci(n){
+        if(n==1||n==2){
+            return 1;
+        }else return fibonaci(n-1)+fibonaci(n-2)
+    }
+    function b1(){
+        let a=prompt("nhập vào số chữ số fibonaci đầu tiên")
+        document.write(a+" Số fibonaci đầu tiên là: "+"<br>")
+        for (let i=1;i<=a;i++){
+            document.write(fibonaci(i)+"; ")
+
+        }
+    }
+    function b2(){
+        let a=parseInt(prompt("nhập vào 1 số nguyên dương"))
+        alert("Giai thừa của "+a+" là: "+tinhGiaithua(a))
+
+    }
+     function tinhGiaithua(i){
+        if(i==1||i==0){
+            return 1
+        }else return i*tinhGiaithua(i-1)
+     }
+
+
+
+    function b3(){
+        let out=''
+        let out1=''
+        let out2=''
+        let out3=''
+        for(let i=1;i<11;i++){
+            for (let j=1;j<i;j++){
+                out+="*"
+            }
+            out+="<br>"
+        }
+        document.write(out+"<br>")
+
+        for(let i=1;i<11;i++){
+            for (let j=1;j<11-i;j++){
+                out2+="*"
+            }
+            out2+="<br>"
+        }
+        document.write(out2+"<br>")
+
+
+
+        for(let i=10;i>0;i--){
+            for (let j=1;j<11;j++){
+                    if(j<=i){
+                        out1+="&nbsp;&nbsp;"
+                    }else out1+="*"
+            }
+            out1+="<br>"
+            console.log(out1)
+        }
+        document.write(out1+"<br>")
+
+        for(let i=10;i>0;i--){
+            for (let j=10;j>0;j--){
+                if(j>=i){
+                    out3+="&nbsp;&nbsp;"
+                }else out3+="*"
+            }
+            out3+="<br>"
+            console.log(out3)
+        }
+        document.write(out3)
+
+    }
+
+    function b4(){
+        let hcn=''
+        for(let i=1;i<11;i++){
+            for (let j=1;j<i;j++){
+
+                if(i==1||i==10){
+                    hcn+="*"
+                }else {
+                    hcn+="*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*"
+                }
+            }
+            hcn+="<br>"
+        }
+        document.write(hcn+"<br>")
+    }
+
+
+
+
+
+
+
+</script>
