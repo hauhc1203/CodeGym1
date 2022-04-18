@@ -11,10 +11,14 @@
 <script>
     let x=[1,3,4,2,5,9,7,8]
     let a=x[0]
+    let vitri
     for (let i=1;i<x.length;i++){
         if(x[i]>a){
             a=x[i]
+            vitri=i
+
         }
     }
-    alert("gia tri lớn nhất trong mảng là "+a)
+    alert("gia tri lớn nhất trong mảng là "+a+" nằm ở vị trí "+vitri)
+
 </script>
