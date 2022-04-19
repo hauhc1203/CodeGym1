@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Luyện tập mảng 01</title>
+</head>
+<body>
+<button onclick="bai1()">Bai 1</button>
+<button onclick="bai2()">Bai 2</button>
+<button onclick="bai3()">Bai 3</button>
+<button onclick="bai4()">Bai 4</button>
+<button onclick="bai5()">Bai 5</button>
+<button onclick="bai6()">Bai 6</button>
+<button onclick="bai7()">Bai 7</button>
+<button onclick="bai8()">Bai 8</button>
+
+<button onclick="bai9()">Bai 9</button>
+
+
+
+</body>
+</html>
+
+
+<script>
+
+    let num=[11,21,13,15,10,53,31,85,23,41]
+    function bai1(){
+
+        let c=0
+        for(let i=0;i<num.length;i++){
+            if(num[i]>=10){
+                c++
+            }
+        }
+        alert("trong mang da cho co "+c+" so >= 10")
+    }
+
+
+    function bai2(){
+
+        let max=num[0]
+        let vitri=0
+
+        for(let i=1;i<num.length;i++){
+            if(num[i]>=max){
+                max=num[i]
+                vitri=i
+            }
+        }
+        alert("so lon nhat trong mang da cho la  "+max+" nam o vi tri thu "+vitri)
+    }
+    function bai3(){
+
+        let max=num[0]
+        let tong=num[0]
+        console.log(tong)
+        let avg
+
+        for(let i=1;i<num.length;i++){
+            if(num[i]>=max){
+                max=num[i]
+
+
+            }
+            tong+=num[i]
+        }
+        console.log(tong)
+        avg=tong/num.length
+        alert("so lon nhat trong mang da cho la  "+max+" gia tri trung binh cua cac phan tu la"+avg)
+    }
+    function bai4(){
+        let so=parseInt(prompt("nhap vao do dai mang"))
+
+        let a=[]
+        for(let i=0;i<so;i++){
+            a[i]=parseInt(prompt(" nhap vao phan tu thu "+i))
+        }
+
+
+        console.log(a.reverse().join())
+    }
+
+    function bai5(){
+        let num1=[-1,-2,3,-4,5,6,-7]
+        let c=0
+        for(let i=0;i<num1.length;i++){
+            if(num1[i]<0){
+                c++
+            }
+        }
+        alert("So chu so nguyen am trong mang da cho la "+c)
+    }
+    function bai6(){
+        let arr=[]
+        for(let i=0;i<10;i++){
+            arr[i]=parseInt(prompt("nhap vao phan tu thu "+i))
+        }
+        let n=parseInt(prompt("nhap vao V"))
+        if(arr.indexOf(n)==-1){
+            alert("V is not in the array")
+        }else alert("V is  in the array")
+    }
+    function bai7(){
+        alert("mang da cho"+num.join())
+        let n=parseInt(prompt("nhap vao V"))
+        if(num.indexOf(n)==-1){
+            alert("V is not in the array")
+        }else {
+            num.splice(num.indexOf(n),1)
+        }
+        alert(num.join())
+    }
+    function bai8(){
+
+       document.write(num.sort( function (a,b){
+           if(a>b){
+               return 1
+           }else if(a<b){
+               return  -1
+           }else return 0
+       }).reverse())
+    }
+    function bai9(){
+        let a=[1,2,3,4,5,6,7,8,9,10]
+        let b=[11,12,13,14,15,16,17,18,19,20]
+        let c=a.concat(b)
+        document.write(c.join())
+    }
+</script>
