@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Tic tac toe</title>
+</head>
+<body >
+<p id="banco"></p><br><br>
+<button onclick="change()">
+    Change
+
+
+</button>
+
+</body>
+</html>
+<script>
+    let a=[]
+    let c=document.getElementById('banco')
+
+    let c1=''
+    for(let i=0;i<3;i++){
+        a[i]=new Array()
+        for(let j=0;j<3;j++){
+            a[i].push('. ')
+        }
+    }
+    a.forEach(element=>c1+=element+"<br>")
+    c.innerHTML=c1.replace(/,/g,'&nbsp;&nbsp;&nbsp;&nbsp;')+"<br><br>"
+
+    let count=1
+    function change(){
+
+        c1=''
+        let x=prompt("nhap x")
+        let y=prompt("nhap y")
+        if(count==1){
+            a[y][x]='x'
+            count=2
+        }else {
+            a[y][x]='o'
+            count=1
+        }
+        a.forEach(element=>c1+=element+"<br>")
+        c.innerHTML=c1.replace(/,/g,'&nbsp;&nbsp;&nbsp;&nbsp;')
+    }
+
+</script>
