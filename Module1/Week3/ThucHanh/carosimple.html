@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo bàn cờ caro đơn giản</title>
+</head>
+<body>
+<p id="banco"></p><br>
+<br>
+<button onclick="changeValue()">Change Value</button>
+
+</body>
+</html>
+<script>
+    let n=prompt("nhap vao so hang")
+    let m=prompt("nhap vao so cot")
+    let a=[]
+    let c=document.getElementById('banco')
+    let c1=''
+    for(let i=0;i<n;i++){
+        a[i]=new Array()
+        for(let j=0;j<m;j++){
+            a[i].push(0)
+        }
+    }
+    a.forEach(element=>c1+=element+"<br>")
+    c.innerHTML=c1.replace(/,/g,'&nbsp;&nbsp;')+"<br><br>"
+
+
+    function changeValue(){
+        c1=''
+        let x=prompt("nhap x")
+        let y=prompt("nhap y")
+        a[y][x]='x'
+
+        a.forEach(element=>c1+=element+"<br>")
+        c.innerHTML=c1.replace(/,/g,'&nbsp;&nbsp;')
+    }
+
+</script>
