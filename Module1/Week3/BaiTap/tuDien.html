@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Từ điển</title>
+</head>
+<body>
+<input type="text" id="search"><button onclick="tudien()">Tra</button>
+<br><br>
+<p id="output"></p>
+</body>
+</html>
+<script>
+    let eng=['apple','orange','doctor','game','book','computer','dog','cat']
+    let vie=['táo','cam','bác sĩ','trò chơi' ,'sách','máy tính','chó','mèo']
+
+    let a=document.getElementById("search")
+    let b=document.getElementById('output')
+    function tudien(){
+        if(coTrongTuDien(a.value)){
+            b.innerHTML="nghĩa của từ "+a.value+" là: "+vie[eng.indexOf(a.value)]+"<br><br>"
+
+        }else b.innerHTML="Từ "+a.value+" không có trong từ điển <br><br>"
+    }
+
+    function coTrongTuDien(b){
+        for(let i=0;i<eng.length;i++){
+            if(b==eng[i]){
+               return true
+            }
+        }
+        return false
+    }
+
+
+</script>
