@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sử dụng các hàm có sẵn của mảng</title>
+</head>
+<body>
+<button onclick="b1()">Bài 1</button>
+<button onclick="b2()">Bài 2</button>
+<button onclick="b3()">Bài 3</button>
+
+
+</body>
+</html>
+<script>
+  function b1(){
+    let myColor = ["Red", "Green", "White", "Black"];
+    console.log(myColor.toString());
+    console.log(myColor.join());
+    console.log(myColor.join("+"))
+
+  }
+
+  function b2(){
+
+    var num =prompt("nhập vào 1 dãy số");
+
+    var str = num.toString();
+    var result = [str[0]];
+    for (var x = 1; x < str.length; x++) {
+      if (str[x - 1] % 2 === 0 && str[x] % 2 === 0) {
+        result.push('-', str[x]);
+
+      } else {
+        result.push(str[x]);
+      }
+    }
+    console.log(result.join(''));
+  }
+
+  function b3(){
+    var UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    let str=prompt("Nhập vào 1 chuỗi")
+
+    let r=[]
+    for(let x=0;x<str.length;x++){
+
+      if(UPPER.indexOf(str[x])!==-1){
+        r.push(str[x].toLowerCase())
+
+      }else if(LOWER.indexOf(str[x])!==-1){
+        r.push(str[x].toUpperCase())
+
+      }else r.push(str[x])
+    }
+      console.log(r.join(''))
+
+
+  }
+</script>
