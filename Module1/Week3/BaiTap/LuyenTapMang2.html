@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Luyện tập mảng 02</title>
+</head>
+<body>
+<button onclick="bai1()">Bai 1</button>
+<button onclick="bai2()">Bai 2</button>
+<button onclick="bai3()">Bai 3</button>
+<button onclick="bai4()">Bai 4</button>
+<button onclick="bai5()">Bai 5</button>
+<button onclick="bai6()">Bai 6</button>
+
+</body>
+</html>
+<script>
+    function bai1(){
+        var a = [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4, 28, 14], [3, 10, 26, 7]];
+        let output=""
+        for(let i=0;i<a.length;i++){
+            output+="row "+i+"<br>"
+            for(let j=0;j<4;j++){
+                output+=a[i][j]+"<br>"
+            }
+            output+="<br>"
+        }
+
+        document.write(output)
+    }
+    function bai2(){
+        let a=[ 'c', 's', 'c', '2', '6', '1' ]
+        document.write(a.reverse().join(''))
+    }
+    function bai3(){
+        let a=[ 'caaa', 'sb', 'caaw', '23', '6a', '1a' ]
+        let sum=0
+        for(let i=0;i<a.length;i++){
+            sum+=a[i].length
+        }
+
+        document.write("so ký tự có trong mảng là "+sum)
+    }
+    function bai4(){
+        let str=prompt("Nhập vào 1 chuỗi ")
+        let c=0
+        for(let i=0; i<str.length;i++){
+
+            if(str[i]!=' '&&str[i+1]==' '||str[i]!=' '&&str[i+1]==null){
+                c++
+            }
+        }
+
+        alert("Số từ trong chuỗi đã cho là : "+c)
+
+
+    }
+    function bai5(){
+        let a=prompt("Nhập vào 1 chuỗi")
+        let b=prompt("Nhập vào 1 chuỗi")
+        let giong=true
+        if(a.length==b.length){
+            for(let i=0;i<a.length;i++){
+                if(a[i]!=b[i]){
+                    giong =false
+                    break;
+                }
+            }
+            if(giong){
+                alert("Hai chuỗi đã cho giống nhau")
+            }
+
+        }else alert("Hai chuỗi đã cho khác nhau")
+    }
+
+    function bai6(){
+        let n=prompt("nhap vao kich thuoc mang")
+        let a=[]
+        for(let j=0;j<n;j++){
+            a[j]=prompt("Nhập vào phần tử thứ "+j)
+        }
+
+        for(let i=0;i<a.length;i++){
+            if(a[i]=='-'){
+                a[i]="_"
+            }
+        }
+        document.write(a.join(' '))
+    }
+</script>
