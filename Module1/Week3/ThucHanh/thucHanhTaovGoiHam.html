@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo và gọi hàm</title>
+</head>
+<body>
+<button onclick="bai1()">Bai 1</button>
+</body>
+</html>
+<script>
+    function bai1(){
+        let a=parseInt(prompt("Nhap 1 neu dong y. neu khong thi nhap 0"))
+        console.log(processConfirm(a))
+    }
+    function processConfirm(answer) {
+        let result = "";
+        if (answer) {
+            result = "Excellent. We'll play a nice game of chess.";
+        } else {
+            result = "Maybe later then.";
+        }
+        return result;
+    }
+</script>
