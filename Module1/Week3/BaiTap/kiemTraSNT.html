@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Hàm kiểm tra số nguyên tố</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    document.writeln("Cac so nguyen to nho hon 10000 la: <br>")
+    for(let i=1;i<10000;i++){
+        if(isSNT(i)){
+            document.writeln(i+", ")
+        }
+    }
+    function isSNT(n){
+        if(n<=1){
+            return false
+        }else {
+            for(let i=2;i<=n/2;i++){
+                if(n%i==0){
+                    return false
+                }
+            }
+        }
+        return true
+    }
+
+</script>
