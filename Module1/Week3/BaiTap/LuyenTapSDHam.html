@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Luyện tập tạo và sử dụng hàm 01</title>
+</head>
+<body>
+<button onclick="alertMessage()">Bai 1</button>
+<button onclick="bai2()">Bai 2</button>
+<button onclick="bai3()">Bai 3</button>
+
+<button onclick="bai4()">Bai 4</button>
+<button onclick="b5()">Bai 5</button>
+
+
+</body>
+</html>
+
+<script>
+    function alertMessage(){
+        alert("Xin Chao")
+    }
+    function bai2(){
+        let a=prompt("nhap vao 1 so")
+        document.write(a+"+1= "+cong1(a))
+    }
+    function cong1(n){
+        n=parseInt(n)
+        return n+1
+    }
+    function bai3() {
+        let a = parseInt(prompt("nhap a"))
+        let b = parseInt(prompt("nhap b"))
+        check(a,b)
+    }
+    function check(q,w){
+        if(q>w){
+            return  alert(q+" lon hon "+w)
+        }else return alert("Tong cua "+q+" va "+w+" la "+(q+w))
+    }
+    function bai4(){
+        let result = 0;
+        alert("gia tri cua result truoc khi goi ham la "+result)
+        result = addNumbers();
+        alert("gia tri cua result sau khi goi ham la "+result)
+    }
+    function addNumbers() {
+        let firstNum = 4;
+        let secondNum = 8;
+        let rlt = firstNum + secondNum;
+        return rlt;
+    }
+    let m1=[ 'Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe','Regulus']
+    let m2=[ 'Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major','Leo']
+    function b5(){
+        let str=prompt("Nhập tên ngôi sao")
+        if(checkM1(str)){
+            alert("ngôi sao tương ứng là "+m2[m1.indexOf(str)])
+        }else  alert("tên ngôi sao bạn nhập không có trong mảng")
+
+    }
+    function checkM1(s){
+        for(let i=0;i<m1.length;i++){
+            if(s==m1[i]){
+                return true
+            }
+        }
+        return false
+    }
+
+</script>
