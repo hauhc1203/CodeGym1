@@ -14,7 +14,6 @@
   let p=0
   function b(){
     let s=document.getElementById('in').value
-
     p=parseInt(s.length/2)
     console.log(check(s,p))
     console.log(checkBangDequy(s))
@@ -31,10 +30,10 @@
  }
 
  function checkBangDequy(str){
-    if(str.length>1){
+    if(str.length>0){
       if(str[0]==str[str.length-1]){
-        str-=str[str.length-1]
-        str-=str[0]
+        str=str.slice(1,str.length-1)
+
         return checkBangDequy(str)
       }else  return false
     } else  return true
