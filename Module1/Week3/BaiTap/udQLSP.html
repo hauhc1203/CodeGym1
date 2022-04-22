@@ -6,7 +6,7 @@
 
     <style>
 
-        tr:nth-child(odd) {
+        tr.hang:nth-child(odd) {
             background-color: #F2F2F2;
         }
         button{
@@ -59,13 +59,13 @@
     }
     function display(){
         let r=""
-        r+="<tr>"
+        r+="<tr >"
         r+="<td  class='nameP'>Product Name</td>"
         r+="<td id='soluongp' colspan='2' style='text-align: right' > </td>"
         r+="</tr>"
         for(let i=0;i<product.length;i++){
 
-            r+="<tr>"
+            r+="<tr  class='hang'>"
             r+="<td class='nameP' >"+product[i]+"</td>"
             r+=`<td><button onclick="editP(${i})">Edit</button></td>`
             r+=`<td><button onclick="delP(${i})">Delete</button></td>`
