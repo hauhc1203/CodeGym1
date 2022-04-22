@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viet ham cat mang slice</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let s=parseInt(prompt('Nhap vao vi tri bat dau'))
+    let f=parseInt(prompt('Nhap vao vi tri ket thuc'))
+
+    let array1=[1,2,3,4,5,6,6,7,8,9,7,4,5,2]
+    console.log(array1)
+
+    console.log(catM(array1,s,f))
+
+    function catM(arr,a,b){
+        let arr1=[]
+        for(let i=a;i<b;i++){
+            arr1.push(arr[i])
+
+        }
+        return arr1
+    }
+</script>
