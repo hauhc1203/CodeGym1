@@ -3,19 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <style>
+
+        tr:nth-child(odd) {
+            background-color: #F2F2F2;
+        }
+        button{
+            background-color: green;
+            color: white;
+        }
+        body{
+            text-align: center;
+        }
+        td.nameP{
+            text-align: left;
+        }
+        div {
+            border: 1px solid black;
+            width: 400px;
+            height: auto;
+            margin: auto;
+            padding: 45px;
+        }
+    </style>
 </head>
 <body>
 <div>
     <h3>Add new product</h3>
     <input id="add" placeholder="New product" >
     <button onclick="addP()">Add</button>
-</div>
-<div>
     <h3>Display all product</h3>
     <table id="display" style=" width: 300px; margin: auto" >
-
     </table>
-
 </div>
 </body>
 </html>
@@ -25,7 +45,8 @@
     function addP(){
         let newP=document.getElementById("add").value
         product.push(newP)
-        display()
+        document.getElementById('add').value=''
+       display()
     }
     function editP(index){
         let edit= prompt("Nhập vào ")
@@ -38,47 +59,22 @@
     }
     function display(){
         let r=""
-
         r+="<tr>"
-        r+="<td style='width: 100px;height: 30px;text-align: left'  >Product Name</td>"
-        r+="<td id='soluongp' style='text-align: right' colspan='2' > </td>"
+        r+="<td  class='nameP'>Product Name</td>"
+        r+="<td id='soluongp' colspan='2' style='text-align: right' > </td>"
         r+="</tr>"
         for(let i=0;i<product.length;i++){
-            r+="<tr id='"
-            r+=i
-            r+="'"
-            r+="class="
-            r+= "hang"
-            r+=">"
-            r+="<td style='width: 100px;height: 30px;text-align: left'>"+product[i]+"</td>"
-            r+="<td><buton type='submit' style='color: white;background-color: green' onclick='editP("
-            r+=i
-            r+=")'>Edit</buton></td>"
-            r+="<td><buton style='color: white;background-color: green' onclick='delP("
-            r+=i
-            r+=")'>Delete</buton></td>"
+
+            r+="<tr>"
+            r+="<td class='nameP' >"+product[i]+"</td>"
+            r+=`<td><button onclick="editP(${i})">Edit</button></td>`
+            r+=`<td><button onclick="delP(${i})">Delete</button></td>`
             r+="</tr>"
         }
 
         // console.log(r)
         document.getElementById('display').innerHTML=r
         document.getElementById('soluongp').innerHTML+=product.length+' products'
-        document.getElementById('add').value=''
+
     }
 </script>
-
-<style>
-
-    tr.hang:nth-child(odd) {
-        background-color: #F2F2F2;
-    }
-    button{
-        background-color: #50AF50 ;
-        color: white;
-        border: 1px;
-    }
-    body{
-        text-align: center;
-    }
-
-</style>
