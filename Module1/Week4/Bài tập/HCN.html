@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1000x" height="500px" style="border:1px solid black;">
+</canvas>
+</body>
+</html>
+<script>
+    class Rectangle{
+        dai
+        rong
+        constructor(d,r) {
+            this.dai=d
+            this.rong=r
+        }
+        dienTich(){
+            return this.dai*this.rong
+        }
+        chuVi(){
+            return 2*(this.rong+this.dai)
+        }
+        setDai(d){
+            this.dai=d
+        }
+        setR(r){
+            this.rong=r
+        }
+
+        creatHCN(x,y){
+            let c=document.getElementById('myCanvas')
+            let ctx =c.getContext('2d')
+            ctx.fillStyle='red'
+            ctx.fillRect(x,y,this.dai,this.rong)
+        }
+    }
+
+let hcn= new Rectangle(400,200)
+    document.write("<br>chu vi hcn "+hcn.chuVi()+" dien tich hcn "+hcn.dienTich()+"<br>")
+    hcn.creatHCN(0,0)
+    hcn.setDai(300)
+    hcn.setR(200)
+    document.write("chu vi hcn "+hcn.chuVi()+" dien tich hcn "+hcn.dienTich())
+    hcn.creatHCN(500,300)
+
+</script>
