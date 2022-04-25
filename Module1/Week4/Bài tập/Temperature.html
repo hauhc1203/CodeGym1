@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    class Temperature{
+        t
+        constructor(t) {
+            this.t=t
+        }
+        ctoK(){
+            return this.t+273
+        }
+        ktoC(){
+
+        }
+        setT(t){
+            this.t=t
+        }
+    }
+    let nhiet= new Temperature()
+    nhiet.setT(25)
+    console.log(nhiet.ctoK())
+</script>
