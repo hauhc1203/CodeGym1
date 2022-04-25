@@ -12,12 +12,12 @@
         button{
             background-color: green;
             color: white;
+            margin: auto;
         }
-        body{
-            text-align: center;
-        }
+
         td.nameP{
             text-align: left;
+            width: 100px;
         }
         div {
             border: 1px solid black;
@@ -26,12 +26,20 @@
             margin: auto;
             padding: 45px;
         }
+        .input{
+            width: 400px;
+        }
+        img{
+            width: 50px;
+            height: 50px;
+        }
     </style>
 </head>
 <body>
 <div>
     <h3>Add new product</h3>
-    <input id="add" placeholder="New product" >
+    <input class="input" id="add" placeholder="New product" ><br><br>
+    <input class="input" id="add1" placeholder="URL ảnh của sản phẩm" ><br><br>
     <button onclick="addP()">Add</button>
     <h3>Display all product</h3>
     <table id="display" style=" width: 300px; margin: auto" >
@@ -40,33 +48,51 @@
 </body>
 </html>
 <script>
-    let product=[]
+    let product= new Array()
+    let x=0
     display()
     function addP(){
+
         let newP=document.getElementById("add").value
-        product.push(newP)
+        let newPimg=document.getElementById("add1").value
+        product[x]=new Array()
+        product[x].push(newP,newPimg)
         document.getElementById('add').value=''
-       display()
+        document.getElementById('add1').value=''
+        x++
+
+        display()
     }
     function editP(index){
+
         let edit= prompt("Nhập vào ")
-        product[index]=edit
+        let edit1= prompt("Nhập vào ")
+
+        if(edit!==null){
+            product[index][0]=edit
+        }
+        if (edit1!=null){
+            product[index][1]=edit1
+
+        }
         display()
     }
     function delP(index){
         product.splice(index,1)
+        x--
         display()
     }
     function display(){
         let r=""
         r+="<tr >"
-        r+="<td  class='nameP'>Product Name</td>"
+        r+="<td  class='nameP' colspan='2'>Product Name</td>"
         r+="<td id='soluongp' colspan='2' style='text-align: right' > </td>"
         r+="</tr>"
         for(let i=0;i<product.length;i++){
 
             r+="<tr  class='hang'>"
-            r+="<td class='nameP' >"+product[i]+"</td>"
+            r+="<td class='nameP' >"+product[i][0]+"</td>"
+            r+=`<td ><img src="${product[i][1]}" style="text-align: center"></td>`
             r+=`<td><button onclick="editP(${i})">Edit</button></td>`
             r+=`<td><button onclick="delP(${i})">Delete</button></td>`
             r+="</tr>"

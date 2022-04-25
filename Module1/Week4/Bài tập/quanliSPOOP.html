@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý sản phẩm theo OOP</title>
+
+    <style>
+        td{
+            width: 100px;
+        }
+        tr.hang:nth-child(odd) {
+            background-color: #F2F2F2;
+        }
+        button{
+            background-color: green;
+            color: white;
+            margin: auto;
+        }
+
+        td.cangiua{
+            text-align: center;
+            width: 70px;
+        }
+        .nameP{
+            width: 120px;
+        }
+        div {
+            border: 1px solid black;
+            width: 500px;
+            height: auto;
+            margin: auto;
+            padding: 45px;
+        }
+        .input{
+            width: 400px;
+        }
+        img{
+            width: 50px;
+            height: 50px;
+        }
+        .P{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h3>Add new product</h3>
+    <input class="input" id="add" placeholder="New product" ><br><br>
+    <input class="input" id="add1" placeholder="URL ảnh của sản phẩm" ><br><br>
+    <input class="input" id="add2" placeholder="Giá của sản phẩm" ><br><br>
+
+    <button onclick="addP()">Add</button>
+    <h3>Display all product</h3>
+    <table id="display" style=" width: 500px ;  margin: auto" >
+    </table>
+</div>
+</body>
+</html>
+<script>
+
+    class Product{
+        name
+        image
+        price
+        constructor(nameP,img,priceP) {
+            this.name=nameP
+            this.image=img
+            this.price=priceP
+        }
+    }
+    let product= []
+    display()
+    function addP(){
+
+        let newP=document.getElementById("add").value
+        let newPimg=document.getElementById("add1").value
+        let newPprice=document.getElementById("add2").value
+
+        product.push(new Product(newP,newPimg,newPprice))
+        document.getElementById('add').value=''
+        document.getElementById('add1').value=''
+        document.getElementById('add2').value=''
+        display()
+    }
+    function editP(index){
+        let edit= prompt("Nhập vào tên sản phẩm ")
+        let edit1= prompt("Nhập vào URL ảnh của sản phảm")
+        let edit2=prompt('Nhập vào giá của sản phẩm')
+        if(edit!=''&&edit!=null){
+            product[index].name=edit
+        }
+        if (edit1!=''&&edit1!=null){
+            product[index].image=edit1
+        }
+        if(edit2!=''&&edit2!=null){
+            product[index].price=edit2
+        }
+        display()
+    }
+    function delP(index){
+        product.splice(index,1)
+        display()
+    }
+    function display(){
+        let r=""
+        r+="<tr >"
+        r+="<td  class='nameP' >Product Name</td>"
+        r+="<td  class='P'>Image</td>"
+        r+="<td  class='P' >Price</td>"
+
+        r+="<td id='soluongp' colspan='2' style='text-align: right ;width: 140px' > </td>"
+        r+="</tr>"
+        for(let i=0;i<product.length;i++){
+
+            r+="<tr  class='hang'>"
+            r+="<td class='nameP' >"+product[i].name+"</td>"
+            r+=`<td class="cangiua" ><img src="${product[i].image}" style="text-align: center"></td>`
+            r+="<td class='cangiua' >"+product[i].price+"</td>"
+            r+=`<td class="cangiua" ><button onclick="editP(${i})">Edit</button></td>`
+            r+=`<td class="cangiua"><button onclick="delP(${i})">Delete</button></td>`
+            r+="</tr>"
+        }
+
+        // console.log(r)
+        document.getElementById('display').innerHTML=r
+        document.getElementById('soluongp').innerHTML+=product.length+' products'
+
+    }
+</script>
