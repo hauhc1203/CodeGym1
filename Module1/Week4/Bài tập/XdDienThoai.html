@@ -14,22 +14,11 @@
         draf=[]
         inbox=[]
         sent=[]
-        isOn
-        constructor(p,draf,mDen,mDi,isOn) {
+        isOn=false
+        constructor(p) {
             this.battery=p
-           if(draf!=''&&draf!=null){
-               this.draf.push(draf)
-           }
-           if(mDen!=''&&mDen!=null){
-               this.inbox.push(mDen)
-
-           }
-           if(mDi!=''&&mDi!=null){
-               this.sent.push(mDi)
-           }
-            this.isOn=isOn
         }
-        checkOnOff(){
+        checkStatus(){
             this.battery--
             if(this.isOn){
                 return "Máy đang bật"
@@ -47,37 +36,50 @@
         }
         typeM(m){
             if(this.isOn){
-                this.reduceB()
+                this.decreareB()
                 this.draf.push(m)
             }
         }
+
         receiveM(m){
             if(this.isOn){
-                this.reduceB()
+                this.decreareB()
                 this.inbox.push(m)
             }
         }
-        sentM(ob,i){
+        sendMnhap(ob,i){
             if(this.isOn){
-                this.reduceB()
+                this.decreareB()
                 ob.inbox.push(this.draf[i])
                 this.sent.push(this.draf[i])
                 this.draf.splice(i,1)
             }
         }
+        sentM(ob,m){
+            if(this.isOn){
+                this.decreareB()
+                ob.inbox.push(m)
+                this.sent.push(m)
+
+            }
+        }
+
+        getDraf(){
+            console.log("Thư nháp:   "+this.draf)
+        }
         showInbox(){
             if(this.isOn){
-                this.reduceB()
+                this.decreareB()
                 return "Hộp thư đến :   "+this.inbox.join(" ;  ")
             }
         }
         showSent(){
            if(this.isOn){
-               this.reduceB()
+               this.decreareB()
                return +console.log("Thư đã gửi :     "+this.sent.join(' ;  '))
            }
         }
-        reduceB(){
+        decreareB(){
             if(this.isOn){
                 this.battery--
                 if(this.battery===0){
@@ -96,11 +98,13 @@
     Iphone.typeM('xin chao')
     Iphone.typeM('Toi la Hau')
     Iphone.typeM('hahahahahahaha')
-
-    Iphone.sentM(VSmart,0)
-    Iphone.sentM(VSmart,0)
-    console.log(Iphone.draf)
-    console.log(VSmart.showInbox())
+    Iphone.getDraf()
+    Iphone.sendMnhap(VSmart,1)
+    Iphone.getDraf()
     Iphone.showSent()
+
+    console.log(Iphone.battery)
+    console.log(VSmart.showInbox())
+
 
 </script>

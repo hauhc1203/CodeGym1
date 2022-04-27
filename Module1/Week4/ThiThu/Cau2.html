@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<pre>
+    Viết hàm tryRemoveFromArray() nhận vào một mảng và một số nguyên index, trả về mảng ban đầu đã được loại bỏ phần
+    tử tại vị trí index nếu index hợp lệ. Nếu index không hợp lệ, trả về mảng ban đầu.(không dùng hàm có sẵn để xoá mảng)
+</pre>
+
+</body>
+</html>
+<script>
+    let num=[1,2,3,4,5,6,7,8]
+
+    function tryRemoveFromArray(arr,index){
+        if(index<arr.length&&index>=0){
+            for(let i=index;i<arr.length-1;i++){
+                arr[i]=arr[i+1]
+            }
+               arr.length=arr.length-1
+        }
+        return arr
+    }
+
+    console.log(tryRemoveFromArray(num,2))
+</script>

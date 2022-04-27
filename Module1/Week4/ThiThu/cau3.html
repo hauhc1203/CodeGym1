@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<pre>
+    Viết hàm kiểm tra xem 1 chuỗi có nằm trong chuỗi còn lại không. Với đầu vào là 2 chuỗi (str1,str2) trong đó sẽ kiểm tra str1 có nằm trong str2 không,
+    nếu có trả về true và ngược lại false.(không được dùng hàm có sẵn để tìm)
+
+
+</pre>
+</body>
+</html>
+<script>
+    let str1='abc'
+    let str2='aaabaaaaaaaaabcaaaaaaaaaaaaajjdajs'
+
+    function checkStr(s1,s2){
+
+            let s1ThuocS2=false
+            for (let j=0;j<s2.length;j++){
+                if(s1[0]==s2[j]){
+                    let c=0
+                    let k=j
+                    for(let i=1;i<s1.length;i++){
+                        k++
+                        if(s1[i]==s2[k]){
+                            c++
+                            s1ThuocS2=true
+                        }else {
+                            s1ThuocS2=false
+                            break
+                        }
+                    }
+                    if(c==s1.length-1){
+                        break
+                    }
+                }
+        }
+        return s1ThuocS2
+    }
+
+    console.log(checkStr(str1,str2))
+
+
+</script>

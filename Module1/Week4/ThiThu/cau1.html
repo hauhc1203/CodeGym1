@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<pre>
+  Cho danh sách các điểm thi ở trong một mảng
+  Hãy viết hàm tìm được điểm thi cao thứ 3 với đầu vào là một mảng điểm.(không dùng hàm có sẵn để sắp xếp).
+
+  thang điểm
+  Khai báo được hàm, bao gồm cả tham số
+  Dùng vòng lặp để duyệt được mảng
+  Tìm được giá trị điểm cao thứ 3
+  Viết mã sạch
+
+
+</pre>
+</body>
+</html>
+<script>
+  let diemThi=[7,8,9,7,5,6,7,8,9.5,6,10,6]
+
+
+
+  function diemCaoT3(arr){
+    let max=arr[0]
+    for(let i=1;i<arr.length;i++){
+      if(arr[i]>max) {
+        max=arr[i]
+      }
+    }
+    let max2=0
+      for (let i=0; i<arr.length;i++){
+          if(arr[i]===max){
+              continue
+          }else {
+              if(max2<arr[i]){
+                  max2=arr[i]
+              }
+          }
+      }
+     let max3=0
+      for (let i=0; i<arr.length;i++){
+          if(arr[i]===max||arr[i]===max2){
+              continue
+          }else {
+              if(max3<arr[i]){
+                  max3=arr[i]
+              }
+          }
+      }
+    return max3
+  }
+
+  console.log(diemCaoT3(diemThi))
+</script>
