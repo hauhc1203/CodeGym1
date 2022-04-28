@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+  class Apple{
+      weight=10
+      getWeight(){
+          return this.weight
+      }
+      deCrease(){
+          this.weight--
+      }
+      isEmty(){
+          if(this.weight>0){
+              return false
+          }else return true
+
+      }
+  }
+    class Human{
+      name
+      weight
+      gender
+      constructor(n,w,g) {
+          this.name=n
+          this.weight=w
+          this.gender=g
+      }
+      setGender(g){
+          this.gender=g
+      }
+      checkApple(a){
+          return a.getWeight()
+      }
+      eat(a){
+         if(this.checkApple(a)>0){
+             a.weight--
+         }else console.log('het tao roi')
+      }
+      getName(){
+          return this.name
+      }
+      setName(n){
+          this.name=n
+      }
+      getWgt(){
+          return this.weight
+      }
+      setWeight(w){
+          this.weight=w
+      }
+      isMale(){
+          if (this.gender==='male'){
+              return true
+          }else return  false
+      }
+      say(s){
+          console.log(s)
+      }
+    }
+    let human1= new Human('Adam',60,'male')
+    let human2= new Human('Eva',50,'female')
+    let apple1= new Apple()
+    console.log(apple1.getWeight())
+    human1.say('Hello')
+    human2.say('Hi,How are you?')
+    human1.say('Im fine,tks')
+    human1.eat(apple1)
+    human1.eat(apple1)
+    human1.eat(apple1)
+    human1.eat(apple1)
+    human1.eat(apple1)
+    human1.eat(apple1)
+    human2.eat(apple1)
+
+    human2.eat(apple1)
+    human2.eat(apple1)
+    human2.eat(apple1)
+    human2.eat(apple1)
+    human2.eat(apple1)
+    human2.eat(apple1)
+    human2.eat(apple1)
+
+
+    console.log(apple1.isEmty())
+
+</script>
