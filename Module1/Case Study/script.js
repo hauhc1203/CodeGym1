@@ -22,8 +22,9 @@ let py=100
 let trail=[]
 let tail=1
 let sc=0
-let   speed=20
-let   huong=UP
+let highScore=0
+let speed=20
+let huong=UP
 
 window.onload=function (){
     document.addEventListener("keydown",keyPush)
