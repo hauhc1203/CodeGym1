@@ -27,6 +27,8 @@ let mess
 let myInterval= setInterval(game, quangduong/speed)
 let audio=new Audio()
 audio.src="./audio/an2.wav"
+
+
 let player=[]
 
 
@@ -105,7 +107,8 @@ function game(){
         }
 
         if(ax*SNAKE_WIDTH==px&&py==ay*SNAKE_HEIGHT){
-
+            let audio=new Audio()
+            audio.src="./audio/an2.wav"
             audio.play()
             tail++
             player[player.length-1].diem+=speed*10
@@ -146,17 +149,23 @@ function restart(){
 
 }
 function check(arr){
-    for(let i=0;i<arr.length-1;i--){
+    for(let i=0;i<arr.length-1;i++){
         if(arr[arr.length-1].x===arr[i].x&&arr[arr.length-1].y===arr[i].y){
-            display()
+             display()
             status=LOSS
             let ctx=canv.getContext('2d')
             ctx.fillStyle='red'
             ctx.font = "30px Arial";
             ctx.fillText('YOU LOSE',185,250);
+          //  alert('ajaj')
+            let lAudio=new Audio()
+            lAudio.src="./audio/lose.wav"
+            lAudio.play()
+            //
         }
     }
 }
+
 function pause(){
     if(status===PAUSE){
         status=NORMAL
@@ -233,7 +242,7 @@ function createP(){
 }
 function display(){
     let s=''
-    s+=`<image src="${player[player.length-1].img}" style="text-align: center">`
+    s+=`<img src="${player[player.length-1].img}" style="text-align: center">`
     s+="<h3>"+player[player.length-1].getName()+"</h3>"
     s+=`<p>Highest Score: ${player[player.length-1].highestScore}</p>`
     s+=`<p>Your Score: ${player[player.length-1].diem}</p>`
