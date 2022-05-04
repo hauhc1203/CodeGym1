@@ -2,3 +2,20 @@ canvas{
     border: 1px solid black;
     padding: 1px;
 }
+td,tr,table{
+
+    text-align: center;
+}
+
+table{
+
+    background-color: aquamarine;
+}
+body{
+    background-color: greenyellow;
+}
+
+img{
+    height: 50%;
+    width: 50%;
+}
