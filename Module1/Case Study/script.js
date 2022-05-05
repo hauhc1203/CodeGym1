@@ -27,10 +27,9 @@ let mess
 let myInterval= setInterval(game, quangduong/speed)
 let audio=new Audio()
 audio.src="./audio/an2.wav"
-
+let check1=false
 
 let player=[]
-
 
 class Player{
     name
@@ -55,7 +54,7 @@ player.push(new Player('Hoang Cong Hau','./img/1.jpg'))
 function game(){
     if(status===NORMAL||status===BEGIN){
 
-
+        check1=true
         px+=xv
         py+=yv
         if(px>=WIDTH){
@@ -182,41 +181,44 @@ function pause(){
 
 }
 function keyPush(evt){
-    if(status===NORMAL||status===BEGIN){
-        switch (evt.keyCode){
-            case 65:
-                if(huong!==RIGHT){
-                    status=NORMAL
-                    huong=LEFT
-                    xv=-quangduong
-                    yv=0
-                }
-                break
-            case 87:
-                if(huong!==DOWN){
-                    status=NORMAL
-                    huong=UP
-                    xv=0
-                    yv=-quangduong
-                }
+   if(check1){
+       if(status===NORMAL||status===BEGIN){
+           switch (evt.keyCode){
+               case 65:
+                   if(huong!==RIGHT){
+                       status=NORMAL
+                       huong=LEFT
+                       xv=-quangduong
+                       yv=0
+                   }
+                   break
+               case 87:
+                   if(huong!==DOWN){
+                       status=NORMAL
+                       huong=UP
+                       xv=0
+                       yv=-quangduong
+                   }
 
-                break
-            case 68:
-                if(huong!==LEFT){
-                    status=NORMAL
-                    huong=RIGHT
-                    xv=quangduong
-                    yv=0
-                }
-                break
-            case 83:
-                if(huong!==UP){
-                    huong=DOWN
-                    xv=0
-                    yv=quangduong
-                }
-        }
-    }
+                   break
+               case 68:
+                   if(huong!==LEFT){
+                       status=NORMAL
+                       huong=RIGHT
+                       xv=quangduong
+                       yv=0
+                   }
+                   break
+               case 83:
+                   if(huong!==UP){
+                       huong=DOWN
+                       xv=0
+                       yv=quangduong
+                   }
+           }
+       }
+       check1= false
+   }
 
 }
 function getSpeed(){
