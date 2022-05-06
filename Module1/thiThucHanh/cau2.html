@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 2</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let number=[1,22,2,2,3,2,2,1]
+    let number1=[1,22,2,2,3,2,2,1]
+
+    function tryRemoveFromArray(arr,num){
+        if(arr.indexOf(num)!==-1){
+            arr.splice(arr.indexOf(num),1)
+            tryRemoveFromArray(arr,num)
+        }
+        return arr
+    }
+    function tryRemoveFromArray1(arr,num){
+        for(let i=0;i<arr.length;i++){
+            console.log(arr[i])
+            console.log(num)
+            if (arr[i]===num){
+                arr.splice(i,1)
+                i--
+            }
+        }
+        return arr
+    }
+
+    console.log(tryRemoveFromArray(number,2))
+    console.log(tryRemoveFromArray1(number1,2))
+
+
+</script>

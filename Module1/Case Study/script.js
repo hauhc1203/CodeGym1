@@ -47,13 +47,11 @@ class Player{
 
 }
 
-
-
-player.push(new Player('Hoang Cong Hau','./img/1.jpg'))
+//player.push(new Player('Hoang Cong Hau','./img/1.jpg'))
 //console.log(player)
+
 function game(){
     if(status===NORMAL||status===BEGIN){
-
         check1=true
         px+=xv
         py+=yv
@@ -105,7 +103,7 @@ function game(){
             trail.shift()
         }
 
-        if(ax*SNAKE_WIDTH==px&&py==ay*SNAKE_HEIGHT){
+        if(ax*SNAKE_WIDTH===px&&py===ay*SNAKE_HEIGHT){
             let audio=new Audio()
             audio.src="./audio/an2.wav"
             audio.play()
@@ -118,8 +116,9 @@ function game(){
         }
         ctx.fillStyle="red"
         ctx.fillRect(ax*SNAKE_WIDTH,ay*SNAKE_HEIGHT,SNAKE_WIDTH-2,SNAKE_HEIGHT-2)
-
         display()
+
+
         if(player[player.length-1].diem>player[player.length-1].highestScore){
             player[player.length-1].highestScore=player[player.length-1].diem
         }
@@ -170,12 +169,10 @@ function pause(){
         status=NORMAL
     }else if(status===NORMAL) {
         let ctx=canv.getContext('2d')
-
         ctx.fillStyle='red'
         ctx.font = "30px Arial";
         ctx.fillText('PAUSE',210,250);
         status=PAUSE
-
     }
 
 
