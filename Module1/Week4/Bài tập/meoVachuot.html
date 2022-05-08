@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Phát triển ứng dụng mô phỏng lại quá trình mèo bắt chuột và ăn chuột.
+    </title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    const ALIVE=1
+    const DIED=0
+
+    class Cat{
+        name
+        weight
+        maxSpeed
+        constructor(n,w,s) {
+            this.name=n
+            this.weight=w
+            this.maxSpeed=s
+        }
+        say(m){
+            console.log(this.name+": "+m)
+        }
+
+        catchMouse(mouse){
+            if(this.maxSpeed>mouse.speed){
+                console.log("bat duoc "+mouse.name)
+
+            }else {
+                console.log("Khong bat duoc "+mouse.name)
+
+            }
+        }
+
+        eat(m){
+            if((this.maxSpeed>m.speed)&&m.status===ALIVE){
+                this.weight+=m.weight
+                console.log("da an het "+m.name)
+                m.status=DIED
+                m.weight=0
+            }else if(this.maxSpeed<m.speed){
+                console.log(this.name+" chua bat duoc "+m.name)
+            }else if(m.status===DIED){
+                console.log(m.name +" da chet")
+            }
+        }
+    }
+    class Rat{
+        weight
+        speed
+        name
+        status=ALIVE
+        constructor(n,w,s) {
+            this.name=n
+            this.weight=w
+            this.speed=s
+        }
+        say(m){
+            console.log(this.name+": "+m)
+        }
+
+    }
+    let tom=new Cat('Tom',30,100)
+    let rat1=new Rat('twich',10,40)
+    let rat2=new Rat('jerry',10,140)
+
+
+    tom.say('meo meo')
+    rat1.say('hello')
+    rat2.say('haha')
+    tom.catchMouse(rat2)
+    tom.catchMouse(rat1)
+    tom.eat(rat2)
+    console.log(tom.weight)
+    tom.eat(rat1)
+    console.log(tom.weight)
+
+    tom.eat(rat1)
+
+    console.log(rat1.name+' trang thai '+rat1.status+" weight "+rat1.weight )
+    console.log(rat2.name+' trang thai '+rat2.status+" weight "+rat2.weight )
+
+</script>
