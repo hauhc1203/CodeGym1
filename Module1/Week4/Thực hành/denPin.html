@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Xây dựng lớp mô phỏng sự hoạt động của đèn pin</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    const  ON=1
+    const OFF=0
+
+
+    class flashLamp {
+        status=OFF
+        battery
+       setBattery(battery){
+            this.battery=battery
+
+       }
+       getBatteryInfo(){
+           console.log(this.battery.getEnergy())
+       }
+       light(){
+           if(this.status===ON){
+               this.battery.decreaseEnergy()
+           }else {
+               console.log("Hay bat den len truoc")
+           }
+       }
+       turnOn(){
+            this.status=ON
+       }
+       turnOff(){
+            this.status=OFF
+       }
+    }
+    class Battery{
+        energy
+        constructor(e) {
+            this.energy=e
+        }
+        getEnergy(){
+            return this.energy
+        }
+        setEnegy(e){
+            this.energy=e
+        }
+        decreaseEnergy(){
+            this.energy--
+        }
+    }
+
+    let pin1=new Battery(10)
+    let pin2=new Battery(100)
+    let lamp1=new flashLamp()
+    lamp1.setBattery(pin1)
+    lamp1.light()
+    lamp1.turnOn()
+    lamp1.getBatteryInfo()
+    lamp1.light()
+    lamp1.getBatteryInfo()
+    lamp1.setBattery(pin2)
+    lamp1.light()
+    lamp1.getBatteryInfo()
+
+
+
+</script>
