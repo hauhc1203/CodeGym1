@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+</head>
+<body>
+<div id="game"></div>
+
+</body>
+</html>
+<script >
+
+
+    function Hero(image, top, left, size,speed){
+        this.image = image;
+        this.top = top;
+        this.left = left;
+        this.size = size;
+        this.speed=speed
+        this.getHeroElement = function(){
+            return '<img width="'+ this.size + '"' +
+                ' height="'+ this.size + '"' +
+                ' src="' + this.image +'"' +
+                ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
+        }
+
+        this.moveRight = function(){
+            this.left += this.speed;
+
+        }
+        this.moveDown= function (){
+            this.top+=this.speed
+
+        }
+        this.moveLeft= function (){
+            this.left-=this.speed
+        }
+        this.moveUp= function (){
+            this.top-=this.speed
+        }
+
+
+    }
+
+    let hero = new Hero('./img/hero.png', 0, 0, 197,150);
+    function start(){
+        if(hero.left < window.innerWidth - hero.size&&hero.top===0){
+            hero.moveRight();
+
+        }
+        if(hero.left===window.innerWidth-hero.size&&hero.top<window.innerHeight-hero.size*1.5){
+            hero.moveDown()
+
+        }
+        if (hero.left>0&&hero.top===300){
+            hero.moveLeft()
+            console.log(hero.left)
+        }
+        if (hero.top>0&&hero.left==0){
+            hero.moveUp()
+        }
+
+        document.getElementById('game').innerHTML = hero.getHeroElement();
+        setTimeout(start, 100)
+    }
+    start();
+
+</script>
