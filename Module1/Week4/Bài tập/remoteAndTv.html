@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Phát triển chương trình sử dụng Remote để điều khiển Tivi
+    </title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    class Remote{
+        ma
+        constructor(m) {
+            this.ma=m
+        }
+        chuyenKenh(kenh,tv){
+            tv.chuyenKenh(kenh)
+        }
+        tangAm(tv){
+            tv.amLuong+=2
+        }
+        turnOn(tv){
+            tv.turnOn()
+        }
+        turnOff(tv){
+            tv.turnOff()
+        }
+
+    }
+    class TV{
+        kenh
+        amLuong
+        isOn=false
+
+        chuyenKenh(k){
+            if (this.isOn){
+                this.kenh=k
+            }
+        }
+        changeVolume(v){
+            if (this.isOn){
+                this.amLuong=v
+            }
+        }
+        turnOn(){
+            this.isOn=true
+        }
+        turnOff(){
+            this.isOn=false
+        }
+    }
+    let tv1=new TV()
+    tv1.turnOn()
+    tv1.chuyenKenh("kenh 7")
+    tv1.changeVolume(30)
+    console.log(tv1)
+
+    let r1=new Remote("R120")
+    console.log(r1)
+
+    r1.chuyenKenh("Kenh 3",tv1)
+    r1.tangAm(tv1)
+    console.log(tv1)
+
+    r1.turnOff(tv1)
+
+
+    console.log(tv1)
+
+
+
+</script>
